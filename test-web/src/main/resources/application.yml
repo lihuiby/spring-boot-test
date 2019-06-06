@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: @spring.profiles.active@
+logging:
+  path: /data/logs/spring-boot-test
+  file: /data/logs/spring-boot-test/spring-boot-test.log
+  level:
+    com.py: DEBUG
