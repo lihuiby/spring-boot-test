@@ -28,3 +28,6 @@ target/
 *.iml
 *.class
 *-pro.*
+
+/sdf
+/test-web/src/test/
