@@ -2,32 +2,32 @@
 <configuration>
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %X{TraceId:-} %logger{36}:%line - %msg%n</pattern>
         </encoder>
     </appender>
-   <!-- <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file> /export/home/tomcat/domains/back.loan.hexinxiaodai.com/server1/logs/loan-collection-job.log</file>
+    <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file> ./logs/spring-test.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>
-                /export/home/tomcat/domains/back.loan.hexinxiaodai.com/server1/logs/loan-collection-job.%d{yyyy-MM-dd}.log
-                
+                ./logs/spring-test.%d{yyyy-MM-dd}.log
             </fileNamePattern>
         </rollingPolicy>
         <encoder>
-            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %X{X-B3-TraceId:-} %logger{36}:%line - %msg%n</pattern>
+            <!--<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %X{X-B3-TraceId:-} %logger{36}:%line - %msg%n</pattern>-->
         </encoder>
-        
-    </appender>-->
-    
+
+    </appender>
+
     <logger name="com.hexin" level="INFO"/>
     <logger name="org.apache.ibatis" level="INFO"/>
     <logger name="java.sql" level="debug"/>
     <logger name="org.springframework" level="ERROR"/>
-    
+
     <logger name="jdbc.sqltiming" level="INFO"/>
 
-    <root level="debug">
+    <root level="info">
         <appender-ref ref="console"/>
-        <!--<appender-ref ref="rollingFile"/>-->
+        <appender-ref ref="rollingFile"/>
     </root>
 </configuration>

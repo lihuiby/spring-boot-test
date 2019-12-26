@@ -29,6 +29,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <dependency>
             <groupId>com.auth0</groupId>
@@ -40,6 +45,31 @@
             <artifactId>hashids</artifactId>
             <version>1.0.3</version>
             <scope>compile</scope>
+        </dependency>
+
+        <!-- 对接风控接口 start-->
+        <dependency>
+            <groupId>com.hexin.riskcontrol</groupId>
+            <artifactId>risk-control-gateway-private</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hexin.gateway</groupId>
+            <artifactId>gateway-client</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- 对接风控接口 end-->
+
+        <dependency>
+            <groupId>com.googlecode.javaewah</groupId>
+            <artifactId>JavaEWAH</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <version>2.1.1.RELEASE</version>
         </dependency>
 
     </dependencies>
@@ -58,6 +88,12 @@
             <id>pro</id>
             <properties>
                 <spring.profiles.active>pro</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <spring.profiles.active>test</spring.profiles.active>
             </properties>
         </profile>
         <profile>

@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    credit:
+      url: jdbc:mysql://127.0.0.1:3306/101credit_app_20190530?useUnicode=true&characterEncoding=utf-8&ampautoReconnect=true&useSSL=false
+      username: root
+      password: root
+      type: org.apache.tomcat.jdbc.pool.DataSource
+      testWhileIdle: true
+      #      defaultReadOnly: true
+      testOnBorrow: false
+      testOnReturn: false
+      validationQuery: SELECT 1
+      validationQueryTimeout: 1
+      validationInterval: 300000
+      timeBetweenEvictionRunsMillis: 300000
+      maxActive: 100000
+      minIdle: 3
+      maxWait: 100000
+      initialSize: 1
+      removeAbandonedTimeout: 6000
+      removeAbandoned: true
+      logAbandoned: true
+      minEvictableIdleTimeMillis: 300000
+      jmxEnabled: true
+      jdbcInterceptors: org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer
+      tomcat:
+        default-auto-commit: false
+  redis:
+    host: rs.master
+    port: 6379
+    timeout: 20000
+    password: 687x72jG1dW
+    pool:
+      max-active: 500
+      max-idle: 30
+      min-idle: 20
+      max-wait: 30000

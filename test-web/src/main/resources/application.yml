@@ -1,10 +1,34 @@
-server:
-  port: 8080
 spring:
   profiles:
     active: @spring.profiles.active@
-logging:
-  path: /data/logs/spring-boot-test
-  file: /data/logs/spring-boot-test/spring-boot-test.log
-  level:
-    com.py: DEBUG
+
+test:
+  config:
+    private-key: "-----BEGIN OPENSSH PRIVATE KEY-----\n\
+                               b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABBhelMKUx\n\
+                               yZKXLlrmjd0xjLAAAAEAAAAAEAAAEXAAAAB3NzaC1yc2EAAAADAQABAAABAQDzdPQFlK4C\n\
+                               H9mCjlJFFhv/mdGapc2dSFStRGdBZt7Gp2E2YPdxhaAZzXHuQbR42zaNxtZeRQ9sA/C/hd\n\
+                               BxOiI40fyKaVnrJ+WKbIaeKusx2Gf70OcrR9aAi0IdCX4qKEquBaEDnk5z9KplDUPraIk1\n\
+                               TR1jnX+bt1ZFJthYMdBVrQ6iUZ4y4zSNJWCFCfLaW8W6nuBTxQ4C9c/KEhPPTnMIQL5YdW\n\
+                               8YFRd0RCIc3JECqKP6NFNSTJ4vQaN3mnuy9VE2aCE80jEYPUTsa572CBbxFRAnyhuHPjWd\n\
+                               sHF6LoElKQALBuesMqd2lU+/sHNFMfsC+3+nRVAAX9DH4NJcRO73AAAD0GBUA2E5ReSlva\n\
+                               MOTLrgfp7FlfjWD6/2v3Uj1Cfw4SyQ6f2p55wW22G8B7xM9N10MfYXyk1Xc7Otmj8O+NpU\n\
+                               5FwydrsYycE+CbmlGCthg6uOKvE1h2aYvjQNewcTAy+t81gcs1LuUnBXXnpafsDj0dgZBs\n\
+                               V82Z1hOnJVNvox12uENE5LiNgzsdLAA5ORqxm77DmwYulFbIiYNJusxvlDb+1swCCuWiJP\n\
+                               9qh26PzIuFWjjS17hNHonn0psN0JRereJOAXU2kugNSgyx3avvKz1zCfxKPOWX+BYDWalE\n\
+                               q9Lc7a+U1MYKP2R7sUKrCSz4UjlbMjdSy+mcBf7IsjqDMQEns/w+2J5WN8kf5X2S07khlg\n\
+                               7YZm6yynK54LkE7jrwzDslBAHAfw8vAnaVvCiU9l6eWYn0szVXXA1aLZ/GAv4CEjTKho3h\n\
+                               ZVSbGtbY8uVJM6pEm+hQhkyN36igPOrNc/vVFdk4VRKJSmTYaMtpPfb02nvE9940smv+Yg\n\
+                               20Cilft0KGKqW6egqm0TsOiTL/bbDi3p+tHZbWxgIJdekd6xS/baK/nJ+7amoJQw69dAIT\n\
+                               JTOBOMeKSKt29hlCdde/ptmL4G7ghSlrPLYS28eNS9P8Dd6mfak6om2yA4aC9TA7ZNK3CQ\n\
+                               zg3fvZLI8tAvzXSVFyMQEFUEccKqUHjELkHdUDrnq/sNn+416Y449shLxucVNTIz3c7UIF\n\
+                               h8qME+VJorvciIgLGmf0r90QKSABTLRMPz41+iT+2/K452bar5GJDcudUWiV427WL5Ds5F\n\
+                               ZV5A1Et0Y2nqNg4F/EnFIqkkPEVYQteK3XstT4TX1HXQVHMF/euLt6oya2vjMWVJj0lHpY\n\
+                               wU8ef4xFXxKK4mSnf9+OvfsyyzOw/a9tqhVqqzgls6/TeSSKMaZOwUT9WmMgXKC2Hf2cba\n\
+                               b53HFCfACJ8dIycqCQLM1LH1gS1wFyz0W06xWXTFJ4lUi7rC6F/O681MxMCPfFnYlOyFQi\n\
+                               1bPj3fO+N+nPN2xvgaNNdBd9PUjEzEuP3aZ5aPXoq5lwbRkxQZWnkd1+dILf4NwMt5LNQb\n\
+                               pCMQw4yVZxeyobeNaRpvXvagJz9Yt8TZ3We2Q8KQp9BgGIcwVZ8FHZlqccvPRjSSLZr4CV\n\
+                               pqDa0ijjAg6+pUUoffPZ77rEUTwrlGTIZ1pp47Av/FOsZiijZHbb4aB4DKEdT7wQBXCFcE\n\
+                               eO64/HjUZQMhsYdjcVYXKHKNIWm+kuEuv/KRol0gSf9BWONMAfZ40+UIEPyog3HEimqMgq\n\
+                               uYBNmbIqHqEDJy1JOAjuJBsDtwQaU=\n\
+                             -----END OPENSSH PRIVATE KEY-----"
