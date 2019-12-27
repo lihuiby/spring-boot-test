@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @Date: Created in 2019/06/17
  */
 @Component
-@PropertySource("classpath:config.properties")
+@PropertySource("classpath:application.properties")
 public class ConfigConstant {
 
 	public static String userInfo;
