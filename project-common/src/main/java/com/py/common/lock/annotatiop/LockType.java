@@ -10,7 +10,7 @@ public enum LockType {
 	TRY_LOCK,
 
 	/** 判断锁 */
-	IS_LOCK,
+	IS_LOCKED,
 	;
 
 }

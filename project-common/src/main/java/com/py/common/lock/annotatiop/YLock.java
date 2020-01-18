@@ -23,18 +23,16 @@ public @interface YLock {
 	String lockKey();
 
 	/** 参数坐标 */
-	LockParameterIndex lockParamIndex() default LockParameterIndex.INDEX_0;
+	int lockParamIndex() default 0;
 
 	/** key拼接的值 */
-	String[] paramKeyName() default {};
-
-	Class[] paramKeyType() default {};
+	String paramKeyName() default "";
 
 	/** 拼接符 */
 	String splice() default "_";
 
-	/** 锁的类型, tryLock(尝试锁), is_lock(判断锁) */
-	LockType lockType();
+	/** 锁的类型, tryLock(尝试锁), is_lock(判断锁) TODO 读锁 ? 写锁 ?*/
+	LockType lockType() default LockType.IS_LOCKED;
 
 	/**
 	 * 锁的key值前缀

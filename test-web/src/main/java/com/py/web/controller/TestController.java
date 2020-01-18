@@ -1,12 +1,12 @@
 package com.py.web.controller;
 
+import com.py.common.lock.test.LockUserTest;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,10 +27,11 @@ public class TestController {
 
 	@RequestMapping(value = "/setName")
 	@ResponseBody
-	public Object setAdminName(String name) {
-		System.out.println("===> name : " + name);
-		log.info("name = {}", name);
-		log.error("error name = {}", name);
+	public Object setAdminName(@RequestBody Map<String,Object> params) {
+		/*System.out.println("===> name : " + name);
+		log.info("name = {}, age = {}", name, age);
+		log.error("error name = {}", name);*/
+		log.info("params = {}", params);
 
 		String traceId = MDC.get("X-B3-TraceId");
 		Map<String, String> copyOfContextMap = MDC.getCopyOfContextMap();
@@ -41,7 +42,15 @@ public class TestController {
 			log.info("new Thread name = {} , traceId={}, contextMap={}", Thread.currentThread().getName(), traceId, copyOfContextMap);
 		}).start();
 
-		return "{'name':'" + name + "'}";
+		return "{'name':'" + params.get("name") + "'}";
+	}
+
+	@PostMapping(value = "/setUser")
+	@ResponseBody
+	public Object setUser(@RequestBody LockUserTest list) {
+		log.info("user = {}", list);
+
+		return "{'name':'" + list.getName() + "'}";
 	}
 
 }

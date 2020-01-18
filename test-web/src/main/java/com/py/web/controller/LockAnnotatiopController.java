@@ -19,14 +19,22 @@ public class LockAnnotatiopController {
 
 	@RequestMapping("/test/lock/name")
 	@YLock(lockType = LockType.TRY_LOCK, lockKey = "name")
-	public ResponseModel testLock(String name, int age) {
+	public ResponseModel testLock(String name, Integer age) {
+		ResponseModel rm = new ResponseModel();
+
+		return rm;
+	}
+
+	@RequestMapping("/test/lock/islock")
+	@YLock(lockType = LockType.IS_LOCKED, lockKey = "lockUser.age")
+	public ResponseModel testisLock(String type, LockUserTest lockUser) {
 		ResponseModel rm = new ResponseModel();
 
 		return rm;
 	}
 
 	@RequestMapping("/test/lock/error")
-	@YLock(lockType = LockType.IS_LOCK, lockKey = "age")
+	@YLock(lockType = LockType.IS_LOCKED, lockKey = "lockUser.age")
 	public ResponseModel testError(String type, LockUserTest lockUser) {
 		ResponseModel rm = new ResponseModel();
 
